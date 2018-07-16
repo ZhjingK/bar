@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<string.h>
+
+int main()
+{
+   int k=0;
+   char bar[102];
+   memset(bar,0,sizeof(bar));
+    const char* str="|-/\\";
+   for(;k<=100;++k)
+    {
+        printf("[%-100s] (%d%%) [%c]\r",bar,k,str[k%4                  ]);
+        fflush(stdout);
+         bar[k]='*';
+         sleep(1);
+     }
+     printf("\n");
+     return 0;
+ }
